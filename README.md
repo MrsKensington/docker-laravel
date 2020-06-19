@@ -26,7 +26,7 @@ Default: production
     services:
     
       app:
-        image: MrsKensington/docker-laravel
+        image: mrskensington/laravel
         container_name: app
         restart: unless-stopped
         tty: true
@@ -37,7 +37,7 @@ Default: production
           - ./app:/var/www
     
       scheduler:
-        image: MrsKensington/docker-laravel
+        image: mrskensington/laravel
         container_name: scheduler
         restart: unless-stopped
         tty: true
@@ -48,7 +48,7 @@ Default: production
           - ./app:/var/www
     
       queue:
-        image: MrsKensington/docker-laravel
+        image: mrskensington/laravel
         container_name: queue
         restart: unless-stopped
         tty: true
