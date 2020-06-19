@@ -38,9 +38,6 @@ RUN useradd -u 1000 -ms /bin/bash -g www www
 COPY start.sh /usr/local/bin/start.sh
 RUN chown www:www /usr/local/bin/start.sh && chmod u+x /usr/local/bin/start.sh
 
-# Copy composer.json
-COPY composer.json /var/www/
-
 # Copy existing application directory permissions
 COPY --chown=www:www . /var/www
 
