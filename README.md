@@ -2,7 +2,7 @@
 
 Simple docker container which can be used for running laravel applications. The container can be run in 3 different roles to provide a complete laravel infrastructure. 
 
-# Envrionment Variables
+# Environment Variables
 
 ## CONTAINER_ROLE
 The containers roll can be controled by setting the CONTAINER_ROLE environement variable to one of the following.
