@@ -24,6 +24,16 @@ elif [ "$role" = "scheduler" ]; then
         php artisan schedule:run --verbose --no-interaction &
         sleep 60
     done
+elif [ "$role" = "artisan_service" ]; then
+    echo "Artisan Service role: ${ARTISAN_COMMAND}"
+    php artisan ${ARTISAN_COMMAND}
+elif [ "$role" = "artisan_command" ]; then
+    echo "Artisan Command role: ${ARTISAN_COMMAND}"
+    sleep_period=${ARTISAN_SLEEP:-60}
+    while [ true ]; do
+        php artisan ${ARTISAN_COMMAND}
+        sleep ${sleep_period}
+    done
 else
     echo "Could not match the container role \"$role\""
     exit 1
