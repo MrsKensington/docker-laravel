@@ -21,6 +21,16 @@ The container can be run in two different modes:>
 
 Default: production
 
+## QUEUE_TIMEOUT
+Controls the job timeout (in seconds) used for the queue process. If a job takes longer than the timeout then the queue will kill it.
+
+Default: 90
+
+## QUEUE_TIMEOUT
+Controls the number of times a queue must fail before it's considered a failed job.
+
+Default: 3
+
 # Example Docker file
     version: '3'
     services:

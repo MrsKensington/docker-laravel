@@ -4,6 +4,8 @@ set -e
 
 role=${CONTAINER_ROLE:-app}
 env=${APP_ENV:-production}
+queue_timeout=${QUEUE_TIMEOUT:-90}
+queue_retries=${QUEUE_RETRIES:-3}
 
 cd /var/www/
 
@@ -17,7 +19,7 @@ if [ "$role" = "app" ]; then
     exec php-fpm
 elif [ "$role" = "queue" ]; then
     echo "Queue role"
-    php artisan queue:work --verbose --tries=3 --timeout=90
+    php artisan queue:work --verbose --tries=${queue_retries} --timeout=${queue_timeout}
 elif [ "$role" = "scheduler" ]; then
     echo "Scheduler role"
     while [ true ]; do
