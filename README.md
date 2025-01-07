@@ -26,7 +26,7 @@ Controls the job timeout (in seconds) used for the queue process. If a job takes
 
 Default: 90
 
-## QUEUE_TIMEOUT
+## QUEUE_RETRIES
 Controls the number of times a queue must fail before it's considered a failed job.
 
 Default: 3
